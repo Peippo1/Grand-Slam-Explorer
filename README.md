@@ -68,11 +68,10 @@ The mock data is intentionally isolated in `data/tennis.ts`, and the UI consumes
 
 Suggested next steps for Jeff Sackmann datasets:
 
-1. Add a parser module such as `lib/tennis-importers/sackmann.ts`.
-2. Map CSV rows into the shared interfaces in `types/tennis.ts`.
-3. Normalize tournament names, player IDs, gender tour, years, rounds, surfaces, and match duration fields.
-4. Add validation for missing players, malformed scores, unknown tournaments, and duplicate match IDs.
-5. Replace or merge the mock exports in `data/tennis.ts` with imported JSON generated from the CSV pipeline.
-6. Add importer tests for representative ATP and WTA rows before wiring the data into the dashboard.
+1. Extend `lib/tennis-importers/sackmann.ts` to read full CSV files rather than individual row objects.
+2. Normalize player IDs into a durable local player registry.
+3. Add validation for malformed scores, unknown tournaments, and duplicate match IDs.
+4. Replace or merge the mock exports in `data/tennis.ts` with imported JSON generated from the CSV pipeline.
+5. Add representative ATP and WTA fixture files before wiring the generated data into the dashboard.
 
 Known limitation: the MVP data is fictitious and is designed for UI and architecture demonstration, not historical accuracy.

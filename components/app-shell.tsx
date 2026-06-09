@@ -28,7 +28,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <div className="text-xs text-muted-foreground">Tennis analytics workspace</div>
             </div>
           </Link>
-          <nav className="flex w-full max-w-full min-w-0 gap-1 overflow-x-auto rounded-2xl border border-border bg-white p-1 shadow-sm lg:w-auto">
+          <nav className="grid w-full max-w-full min-w-0 grid-cols-2 gap-1 rounded-2xl border border-border bg-white p-1 shadow-sm sm:flex lg:w-auto">
             {navItems.map((item) => {
               const Icon = item.icon;
               const active = pathname === item.href;
@@ -37,7 +37,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "inline-flex h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-xl px-3 text-sm font-medium transition",
+                    "inline-flex h-10 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-2 text-sm font-medium transition sm:shrink-0 sm:justify-start sm:px-3",
                     active ? "bg-secondary text-primary shadow-sm" : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
                   )}
                 >
